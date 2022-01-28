@@ -4,10 +4,15 @@
 
     <?php while (have_posts()) : the_post(); ?>
 
-        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <h2><a class="no-underline" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
-        <?php the_excerpt(); ?>
-
+        <div class="flex justify-between space-x-10 items-center">
+            <div class="text-left"><?php the_excerpt(); ?></div>
+            <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail([200, 200]); ?>
+            <?php endif; ?>
+        </div>
+        <hr>
     <?php endwhile; ?>
 
 <?php endif; ?>
