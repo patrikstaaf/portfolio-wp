@@ -4,21 +4,32 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <?php wp_head(); ?>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const btn = document.querySelector('.mobile-menu-button');
-            const menu = document.querySelector('.mobile-menu');
+        tailwind.config = {
+                theme: {
+                    fontFamily: {
+                        'inter': ['inter', 'sans-serif']
+                    },
+                },
+            },
 
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
+            document.addEventListener('DOMContentLoaded', function() {
+                const btn = document.querySelector('.mobile-menu-button');
+                const menu = document.querySelector('.mobile-menu');
+
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
             });
-        });
     </script>
 </head>
 
-<body class="bg-gradient-to-r from-rose-50 to-teal-50 font-sans font-light max-w-4xl mx-auto p-6" <?php body_class(); ?>>
+<body class="bg-gradient-to-r from-rose-50 to-teal-50 font-inter font-light max-w-4xl mx-auto p-6" <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <?php $menuItems = wp_get_nav_menu_items('nav'); ?>
 
