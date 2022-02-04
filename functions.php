@@ -12,3 +12,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_script('tailwind', 'https://cdn.tailwindcss.com?plugins=typography');
 });
+
+require get_template_directory() . '/post-types/project.php';
+require get_template_directory() . '/taxonomies/tool.php';
