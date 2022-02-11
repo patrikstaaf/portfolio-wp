@@ -29,7 +29,7 @@
     </script>
 </head>
 
-<body class="bg-gradient-to-r from-rose-50 to-teal-50 font-inter font-light max-w-4xl mx-auto p-6" <?php body_class(); ?>>
+<body class="bg-gradient-to-r from-rose-50 to-teal-50 font-inter font-light max-w-4xl mx-auto p-6 " <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <?php $menuItems = wp_get_nav_menu_items('nav'); ?>
 
@@ -60,4 +60,4 @@
 
     </nav>
 
-    <div class="container prose mx-auto text-center m-10 relative">
+    <div class="container prose mx-auto text-center m-10 relative h-screen">
